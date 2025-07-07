@@ -1,0 +1,7 @@
+# Node modules
+REMS-Scheduling-Optimizer-INFORMS/rems-model-web-app/node_modules/
+# Python virtual environments
+**/__pycache__/
+*.pyc
+venv/
+.env
