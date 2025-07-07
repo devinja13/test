@@ -1,0 +1,86 @@
+{
+  "name": "react-form-stepper",
+  "description": "React stepper component for multiple step forms",
+  "version": "1.4.3",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/M0kY/react-form-stepper.git"
+  },
+  "author": "M0kY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/M0kY/react-form-stepper/issues"
+  },
+  "homepage": "https://github.com/M0kY/react-form-stepper#readme",
+  "keywords": [
+    "react",
+    "component",
+    "stepper",
+    "form",
+    "step",
+    "wizard"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/react-form-stepper.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "tsdx watch",
+    "build": "tsdx build --format cjs,esm,umd",
+    "test": "tsdx test --coverage",
+    "lint": "tsdx lint",
+    "gh-pages:clean": "rimraf example/dist",
+    "gh-pages:build": "npm run build && cd example && npm i && npm run build --prefix",
+    "gh-pages": "npm run gh-pages:clean && npm run gh-pages:build"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint && npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "12.1.4",
+    "@commitlint/config-conventional": "12.1.4",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/commit-analyzer": "8.0.1",
+    "@semantic-release/git": "9.0.0",
+    "@semantic-release/npm": "7.1.3",
+    "@semantic-release/release-notes-generator": "9.0.3",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@types/color": "3.0.2",
+    "@types/jest": "26.0.24",
+    "@types/react": "17.0.14",
+    "@types/react-dom": "17.0.9",
+    "eslint": "7.30.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-react-app": "5.2.1",
+    "eslint-plugin-flowtype": "5.8.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.4.0",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "gh-pages": "3.2.3",
+    "husky": "6.0.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "rimraf": "3.0.2",
+    "semantic-release": "17.4.4",
+    "tsdx": "0.14.1",
+    "tslib": "2.3.0",
+    "typescript": "4.3.5"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "color": "^3.2.1",
+    "react-jss": "^10.6.0"
+  }
+}
