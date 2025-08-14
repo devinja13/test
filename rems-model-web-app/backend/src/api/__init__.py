@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .routes.schedules import router as ScheduleRouter
+import os
 
 app = FastAPI(
     title = "REMS Scheduling API",
@@ -9,13 +10,12 @@ app = FastAPI(
 )
 
 # allowed origins for CORS -- communication between front end and this backend server
-origins = [
-    "http://localhost:5173" # development front end origin -- add vercel production origin later
-]
+frontend_origin = os.getenv("FRONTEND_ORIGIN", "http://localhost:5173")
+allow_origins = [o.strip() for o in frontend_origin.split(",") if o.strip()]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins = origins,
+    allow_origins = allow_origins,
     allow_credentials = True,
     allow_methods = ["*"], # allow all http methods
     allow_headers = ["*"] # allow all http headers
