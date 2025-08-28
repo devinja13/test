@@ -4,7 +4,7 @@ import UploadContainer from "./components/UploadContainer";
 import GeneratedSchedule from "./components/GeneratedSchedule";
 import Navbar from "./components/Navbar";
 import NotFoundPage from "./components/NotFoundPage";
-import "./App.css";
+
 
 // router navigation object
 const router = createBrowserRouter([
